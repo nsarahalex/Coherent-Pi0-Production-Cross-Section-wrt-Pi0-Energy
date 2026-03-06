@@ -1,4 +1,6 @@
 # Macro Files Structure:
+#Motivated from Ryan Howell
+
 Here is a list of files currently used in the macro:
 - file_option/: store playlist files
     - playlist.txt: txt files that consist of paths of ntuple files of given playlist
@@ -29,10 +31,25 @@ Here is a list of files currently used in the macro:
     - plotSelection.py: entry points to make plots for selected events (i.e. `python plotSelection.py --options`)
     - gridSelection.py: enntry points to perform event seletion on grid (i.e. `python gridSelection.py --options`)
     
--background_fit/: entry points for background fittings, hopefully to be the same for all nu_e analysis.
-    - backgroundFit.py: entry point to perform backgroundFit (i.e. python backgroundFit.py --options)
-    
+- background_fit/: entry points for background fittings, hopefully to be the same for all nu_e analysis.
+    - create_Eavail_weight.py: creates visible energy corection histograms (`python create_Eavail_weight.py  --options`) 
+    - apply_eavail_weight.py : Applies visible energy corection (`python apply_eavail_weight.py  --options`)
+    - FitBackground.py : Find cone energy weights by matrix multiplication ( `python FitBackground.py  --options`)
+    - apply_eel_weight.py : Corrects for cone energies ( 'python apply_eel_weight.py --options')
+    - subtractBackground_v2.py : Subtracts backgrounds (' python subtractBackground_v2.py --options')
+    - make_weighted_plots.py :  Make plots (python make_weighted_plots.py --opions')
 
+- efficiency/: Efficiecy calculator
+- unfolding/: unfolding processes
+   - unfolding.py or stat_uncertainity_unfolding.py : unfolds true pion energy 
+- xsec/: Xsection extraction
+   - NimmyXSec_FHC.py : Xsection calculator for FHC
+   - NimmyXSec_RHC.py : Xsection calculator for RHC
+   Flux calculation is different for RHC and FHC, hence two scripts
+
+
+
+#Ryan wrote the following, haven't verified yet.
 # Changes between v1.2 to v1.1
 ## Changes in Ana stage
 - Added variables for birk's constant shifted universes, birk's constant shifted dEdX and  electron score.
